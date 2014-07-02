@@ -29,11 +29,11 @@ angular.module('nflplayersApp')
     	$scope.sport = $scope.sportList[chosen - 1];
     };
     
-    $http.get('http://api.espn.com/v1/sports/football/nfl/athletes/?apikey=ehtaq9zm53tbchrtg7tta6e3')
+    $http.get('http://api.espn.com/v1/sports/football/nfl/athletes/?offset=50&apikey=ehtaq9zm53tbchrtg7tta6e3')
     	.success(function(data){
-    		$scope.players = data;
-    		window.alert('It worked!');
-    		console.log($scope.players);
+    		var input = data;
+    		$scope.players = input.sports[0].leagues[0].athletes;
+  //		window.alert($scope.players.length);
     	});
     
     
