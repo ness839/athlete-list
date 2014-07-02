@@ -1,5 +1,14 @@
 <div class="jumbotron">
-	<button class="sport-btn">NFL</button>
-	<button class="sport-btn">MLB</button>
-	<button class="sport-btn">NBA</button>
+	<h2>Choose the sport:</h2>
+	<button class="sport-btn" ng-click="setSport(1)">NFL</button>
+	<button class="sport-btn" ng-click="setSport(2)">MLB</button>
+	<button class="sport-btn" ng-click="setSport(3)">NBA</button>
+</div>
+
+<div class="jumbotron">
+
+	<h2>Sport chosen:</h2>
+		<p>{{sport.snippet}}</p>
+	<h2>Here are the players:</h2>
+
 </div>

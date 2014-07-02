@@ -5,6 +5,14 @@ body {
 }
 
 /* Sports selector buttons */
+.sport-btn {
+	padding: 2px 30px 2px 30px;
+	text-align: center;
+	font-size: 20px;
+	color: red;
+	border: 2px solid black; 
+	border-radius: 10px;
+}
 
 /* Everything but the jumbotron gets side spacing for mobile first views */
 .header,
@@ -50,7 +58,7 @@ body {
 }
 .jumbotron .btn {
   font-size: 21px;
-  padding: 14px 24px;
+  padding: 10px 20px;
 }
 
 /* Supporting marketing content */
