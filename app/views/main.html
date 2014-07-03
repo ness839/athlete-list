@@ -1,8 +1,16 @@
 <div class="jumbotron">
 	<h2>Choose the sport:</h2>
-	<button class="sport-btn" ng-click="setSport(1)">NFL</button>
-	<button class="sport-btn" ng-click="setSport(2)">MLB</button>
-	<button class="sport-btn" ng-click="setSport(3)">NBA</button>
+	<div class="col-md-4">
+		<button class="sport-btn" ng-click="setSport(1)">NFL</button>
+	</div>
+	<div class="col-md-4">
+		<button class="sport-btn" ng-click="setSport(2)">MLB</button>
+	</div>
+	<div class="col-md-4">
+		<button class="sport-btn" ng-click="setSport(3)">NBA</button>
+	</div>
+	
+	<button class="list-btn" ng-click="getPlayers()">GET PLAYERS</button>
 </div>
 
 <div class="jumbotron">
@@ -10,5 +18,5 @@
 	<h2>Sport chosen:</h2>
 		<p>{{sport.snippet}}</p>
 	<h2>Here are the players:</h2>
-		<p ng-repeat="player in players">{{player.displayName}}</p>
+		<div class="player-list" ng-repeat="player in players">{{player.displayName}}</div>
 </div>

@@ -11,17 +11,16 @@ angular.module('nflplayersApp')
   .controller('MainCtrl', function ($scope, $http) {
   	
     $scope.sportList = [
-      {'name': 'NFL',
+      {'name': 'nfl',
        'snippet': 'National Football League',
        'id': 1 },
-      {'name': 'MLB',
+      {'name': 'mlb',
        'snippet': 'Major League Baseball',
        'id': 2},
-      {'name': 'NBA',
+      {'name': 'nba',
        'snippet':'National Basketball Association',
        'id': 3}
     ];
-    
     $scope.sport = {};
     $scope.players = {};
     
@@ -29,12 +28,29 @@ angular.module('nflplayersApp')
     	$scope.sport = $scope.sportList[chosen - 1];
     };
     
-    $http.get('http://api.espn.com/v1/sports/football/nfl/athletes/?offset=50&apikey=ehtaq9zm53tbchrtg7tta6e3')
-    	.success(function(data){
-    		var input = data;
-    		$scope.players = input.sports[0].leagues[0].athletes;
-  //		window.alert($scope.players.length);
-    	});
-    
-    
+    $scope.getPlayers = function() {    	
+    	switch($scope.sport.id) {
+    		case 1:
+ 		  		$http.get('http://api.espn.com/v1/sports/football/nfl/athletes/?offset=0&apikey=ehtaq9zm53tbchrtg7tta6e3')
+    			.success(function(data){
+    			$scope.players = data.sports[0].leagues[0].athletes; 	
+    			});
+    			break;
+    		case 2:
+ 		  		$http.get('http://api.espn.com/v1/sports/baseball/mlb/athletes/?offset=0&apikey=ehtaq9zm53tbchrtg7tta6e3')
+    			.success(function(data){
+    			$scope.players = data.sports[0].leagues[0].athletes;   	
+    			});
+    			break;
+    		case 3:
+ 		  		$http.get('http://api.espn.com/v1/sports/basketball/nba/athletes/?offset=0&apikey=ehtaq9zm53tbchrtg7tta6e3')
+    			.success(function(data){
+    			$scope.players = data.sports[0].leagues[0].athletes;   	
+    			});
+    			break;
+    		default:
+    			window.alert('You dun goofed!');
+    			break;
+    	}
+    };    
   });
