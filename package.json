@@ -40,5 +40,19 @@
   },
   "scripts": {
     "test": "grunt test"
-  }
+  },
+  "main": "Gruntfile.js",
+  "directories": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ness839/athlete-list.git"
+  },
+  "author": "Justin Wallace",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ness839/athlete-list/issues"
+  },
+  "homepage": "https://github.com/ness839/athlete-list"
 }
